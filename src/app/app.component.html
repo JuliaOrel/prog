@@ -1,26 +1,27 @@
 <div class="wrapper">
-
+  <div class="result-container">
+    <p>{{inp1}} {{left}}</p>
+    <p>=</p>
+    <p>{{result}} {{right}}</p>
+  </div>
   <div class="main-container">
     <div class="selection-cont">
-      <select #c1 name="" id="country1" (mouseleave)="changebase(c1.value)">
+      <div>
+        <input #c7 type="number" id="1" [value]="inpId" (input)="mainFunc(c1.value, c7.value, c2.value, c1.id)">
+      <select #c1 name="" id="left" (mouseleave)="tocountry(c1.value, c1.id)">
         <option value="USD">USD</option>
         <option value="UAH">UAH</option>
         <option value="EUR">EUR</option>
       </select>
-      <p>to</p>
-      <select #c2 name="" id="country2" (mouseleave)="tocountry(c2.value)">
+      </div>
+      <div>
+      <input #c8 type="number" id="2" [value]="inpId2" (input)="mainFunc(c2.value, c8.value, c1.value, c2.id)">
+      <select #c2 name="" id="right" (mouseleave)="tocountry(c2.value, c2.id)">
         <option value="USD">USD</option>
         <option value="UAH">UAH</option>
         <option value="EUR">EUR</option>
       </select>
-      
     </div>
-    
-    <button (click)="convert()">Convert</button>
-    <div class="result-container">
-      <p>1 {{base}}</p>
-      <p>=</p>
-      <p>{{result}} {{cont2}}</p>
     </div>
   </div>
 </div>
